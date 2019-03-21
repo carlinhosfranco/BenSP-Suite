@@ -1,1 +1,1 @@
-# BenSP-Suite
+# Benchmar for Stream Parallelism 
