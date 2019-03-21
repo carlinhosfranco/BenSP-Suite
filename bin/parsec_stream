@@ -1,0 +1,589 @@
+# * *****************************************************************************
+# *
+# *	This program is free software: you can redistribute it and/or modify
+# * it under the terms of the GNU General Public License as published by
+# * the Free Software Foundation, either version 3 of the License, or
+# * any later version.
+# * 
+# * This program is distributed in the hope that it will be useful,
+# * but WITHOUT ANY WARRANTY; without even the implied warranty of
+# * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# * GNU General Public License for more details.
+# *
+# * You should have received a copy of the GNU General Public License
+# * along with this program; if not, see <https://www.gnu.org/licenses/>. 
+# *
+# * The GNU General Public License does not permit incorporating your program
+# * into proprietary programs.  If your program is a subroutine library, you
+# * may consider it more useful to permit linking proprietary applications with
+# * the library.  If this is what you want to do, use the GNU Lesser General
+# * Public License instead of this License.  But first, please read
+# * <https://www.gnu.org/licenses/why-not-lgpl.html>.
+# *
+# * *****************************************************************************
+
+#!/bin/bash
+#Script name
+ME=$(basename $0)
+#echo $ME
+
+L1_INPUT="inputs/light_duty/l1"
+L2_INPUT="inputs/light_duty/l2"
+L3_INPUT="inputs/light_duty/l3"
+LS_INPUT="inputs/light_duty/ls"
+H1_INPUT="inputs/heavy_duty/h1"
+H2_INPUT="inputs/heavy_duty/h2"
+H3_INPUT="inputs/heavy_duty/h3"
+HS_INPUT="inputs/heavy_duty/hs"
+TEST_INPUT="inputs/test"
+FREE_CLASS="inputs/free_class"
+
+#MAIN_PATH="$(pwd)"
+#APP_PATH="$BENSP_DIR/"apps""
+#DEDUP="$APP_PATH/"dedup""
+#FERRET="$APP_PATH/"ferret""
+#DPI="$APP_PATH/"dpi""
+#BENSP_DIR="$MAIN_PATH"
+
+LOGDATE="$(date +%F_%H:%M:%S)"
+#echo ${LOGDATE}
+
+function help {
+	# Usage
+	usage="\
+Usage: $ME -p PROGRAM [OPTION]...
+
+Options:
+		-p PROGRAM       Program that will perform
+		-i INPUT         Input to run of the benchmarks. Default: '$default_inputsize'
+		-n THREADS       Number of threads. Default: '$default_nthreads'
+		-a ACTION        Specifies the run or list of parameters to change. See below for a list of valid changes.
+		-h               Displays this help message.
+
+
+BenSP Programs:
+		'Dedup'          Compression Application Domain. Performs data deduplication and data compression. 
+		'Ferret'         Multimidia Application Domain. Performs images similarity searches.
+		
+
+BenSP Inputs:
+		Test:   t
+		Light Duty Class: l1, l2, l3 e ls
+		Heavy Duty Class: h1, h2, h3 e hs
+		Free Class: f
+BenSP Actions:
+		'run' Execute the benchmark program.
+		
+		'CHANGE' -p dedup -a chunk [VALUE] [BUFFER_STAGE] VALUE [BUFFER_STAGE] VALUE [BUFFER_STAGE] VALUE ...
+			chunk = fragmentation algorithm 
+			fr = Fragmentation Refine Stage
+			dd = Deduplication Stage 
+			comp = Compression Stage 
+			rr = Reorder Stage
+
+			---> Examples of usage:
+				$ME -p dedup -a chunk 1024 dd 20 rr 15
+				$ME -p dedup -a dd 20 rr 15
+				$ME -p dedup -a rr 15
+				$ME -p dedup -a comp 15
+		
+		'CHANGE' -p ferret -a precision [VALUE] [QUEUE_STAGE] VALUE [QUEUE_STAGE] VALUE [QUEUE_STAGE] VALUE [TOP_RANKING] VALUE...
+			precision = precision for segmentation algorithm
+			seg = Image Segmentation Stage
+			ext = Feature Extraction Stage
+			idx = Idexing Stage
+			rank = Ranking Stage
+			ranking = Find Top [VALUE] similar images
+
+		---> Examples of usage:
+				$ME -p ferret -a precision 1024 seg 20 rank 15
+				$ME -p dedup -a seg 50 idx 15
+				$ME -p dedup -a idx 100
+				$ME -p ferret -a precision 1024
+\n		
+ * *****************************************************************************
+ *	\t\t 	LICENCE
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, see <https://www.gnu.org/licenses/>. 
+ *
+ * The GNU General Public License does not permit incorporating your program
+ * into proprietary programs.  If your program is a subroutine library, you
+ * may consider it more useful to permit linking proprietary applications with
+ * the library.  If this is what you want to do, use the GNU Lesser General
+ * Public License instead of this License.  But first, please read
+ * <https://www.gnu.org/licenses/why-not-lgpl.html>.
+ *
+ * *****************************************************************************
+"
+
+	echo -e "${usage}" 
+}
+
+## Parse Options Funcions
+# Process args given to the script
+# Arguments: all arguments given to the script (i.e. "$@")
+
+ARRAY_OPTIONS=( "PARSE_PROGRAM" "PARSE_EXEC_FACT" "PARSE_INPUT" "PARSE_NTHREADS" "PARSE_ACTION")
+function parse_options {
+
+	#Default arguments
+	DEFAULT_INPUTSIZE="t.0"
+	eval DEFAULT_NTHREADS="1"
+	DEFAULT_EXEC_FACT="d"
+
+	#Parse arguments
+	PARSE_PROGRAM=""
+	PARSE_EXEC_FACT=""
+	PARSE_INPUT=""
+	PARSE_NTHREADS=""
+	PARSE_ACTION=""
+	PARSE=""
+	ARG_FOR=""
+	CHANGE=""
+	declare -a ARRAY_ARG_TO_CHANGE
+	MAKE_MODE="bensp"
+	while [[ ! -z "$1" ]]; do
+		
+		ARG="$1"
+		SUBARG=""
+		TMP_ARG=""
+		case "${ARG}" in
+			"-h" )
+				help
+				;;
+			"-p" )
+				PARSE="PROGRAM"
+				ARG_FOR="-p"
+				;;
+			"-c" )
+				PARSE="PARSE_EXEC_FACT"
+				ARG_FOR="-c"
+				;;
+			"-i" )
+				PARSE="PARSE_INPUT"
+				ARG_FOR="-i"
+				;;
+			"-t" )
+				PARSE="PARSE_NTHREADS"
+				ARG_FOR="-t"
+				;;
+			"-a" )
+				PARSE="PARSE_ACTION"
+				ARG_FOR="-a"
+				CHANGE="TRUE"
+				PARSE_ACTION="$@"				
+				eval SIZE_ARRAY="$#"				
+				;;
+			*	)
+				if [ ${ARG:0:1} == "-" ]; then
+	          		echo "Error: Unknown argument '${ARG}'"
+	          		help
+	          		exit 1
+        		fi
+
+				case "${PARSE}" in
+					"PROGRAM")
+						PARSE_PROGRAM="${ARG}"
+						;;
+					
+					"PARSE_EXEC_FACT")
+						PARSE_EXEC_FACT="${ARG}"
+						;;
+					
+					"PARSE_INPUT")
+						PARSE_INPUT="${ARG}"
+						;;
+					
+					"PARSE_NTHREADS")
+						PARSE_NTHREADS="${ARG}"
+						;;
+					"PARSE_ACTION")
+						CHANGE="TRUE"
+						;;
+					
+					*	)
+						help;;
+				esac;;
+		esac
+		shift
+	done
+}
+##############################################
+# Função que inicializa os logs de cada programa e de cada ação
+#Args: programa, action
+function log_control {
+	
+	local ACTION=$2
+
+	if [[ "$ACTION" == "build" ]]; then
+		echo "Creating build log directory"		
+		LOG=${BENSP_DIR}/logs/$PARSE_PROGRAM/
+		mkdir -p "$LOG"
+		eval LOG=${BENSP_DIR}/logs/$PARSE_PROGRAM/${ACTION}"_"${LOGDATE}.log
+	fi
+
+	if [[ "$ACTION" == "run" ]]; then
+
+		LOG=${BENSP_DIR}/logs/$PARSE_PROGRAM/
+		mkdir -p "$LOG"
+		
+		LOG=${BENSP_DIR}/logs/$PARSE_PROGRAM/${ACTION}"_"${LOGDATE}.log	
+		
+		if [[ "$PARSE_PROGRAM" = "dedup" ]]; then
+			OUT_DIR="$(date +%F_%H:%M)"
+			eval TMP_DIR="$BENSP_DIR/apps/$PARSE_PROGRAM/temp/$OUT_DIR"
+			mkdir -p $TMP_DIR			
+		fi
+	fi
+	
+}
+
+#################
+# Função que altera o valor para o algoritmo de fragmentação
+#Args: value
+function dedup_chunk_change {
+	RABIN_FILE="${DEDUP_DIR}/src/rabin.h"
+	#echo "sed -i "s/NWINDOW.*/NWINDOW = $1/" $RABIN_FILE"
+	sed -i "s/NWINDOW.*/NWINDOW = $1,/" $RABIN_FILE
+}
+
+#################
+# Função que altera o tamanho dos buffers
+#Args: stage name, value
+function dedup_buffer_change {
+	DEDUPDEF_FILE="${DEDUP_DIR}/src/dedupdef.h"
+	BUFF=$1
+	VALUE=$2
+	#echo "sed -i "s/$BUFF.*/$BUFF = $VALUE/" $DEDUPDEF_FILE"
+	sed -i "s/$BUFF.*/$BUFF $VALUE/" $DEDUPDEF_FILE
+}
+
+#################
+#Função que altera os parâmetros de precisão no algoritmo de segmentação
+#Args: Q_VALUE, SIZE_FACTOR
+function ferret_change_precision {
+	SRM_FERRET_DIR="${FERRET_DIR}/src/image/srm.c"
+	Q_VALUE=$1 #Valor para precisão 
+	SIZE_FACTOR=$2 #Valor para merge das regiões pequenas
+	sed -i "s/double Q_value =.*/double Q_value = $Q_VALUE;/" $SRM_FERRET_DIR
+	sed -i "s/double size_factor =.*/double size_factor = $SIZE_FACTOR;/" $SRM_FERRET_DIR
+}
+
+################
+# Função para definir o input da execução
+#Args: Parse program and input 
+function define_input {
+
+	APP_PATH="$BENSP_DIR/"apps"/$PARSE_PROGRAM"
+
+	case "$1" in
+		"l1" )
+			eval PARSE_INPUT="$APP_PATH/${L1_INPUT}"
+			;;
+		"l2" )
+			eval PARSE_INPUT="$APP_PATH/${L2_INPUT}"
+			;;
+		"l3" )
+			eval PARSE_INPUT="$APP_PATH/${L3_INPUT}"
+			;;
+		"ls" )
+			eval PARSE_INPUT="$APP_PATH/${LS_INPUT}"
+			;;
+		"h1" )
+			eval PARSE_INPUT="$APP_PATH/${H1_INPUT}"
+			;;
+		"h2" )
+			eval PARSE_INPUT="$APP_PATH/${H2_INPUT}"
+			;;
+		"h3" )
+			eval PARSE_INPUT="$APP_PATH/${H3_INPUT}"
+			;;
+		"hs" )
+			eval PARSE_INPUT="$APP_PATH/${HS_INPUT}"
+			;;
+		"t" )
+			eval PARSE_INPUT="$APP_PATH/${TEST_INPUT}"
+			;;
+		"f" )
+			eval PARSE_INPUT="${FREE_CLASS}"
+			;;
+		 * )
+			echo Input não encontrado para $PARSE_PROGRAM
+			exit -1
+	esac
+
+}
+
+function dedup_run {
+
+	ACTION=""
+	LOG=""
+	
+	if [[ -e "$DEDUP"/src/dedup_pthreads"" ]]; then
+		log_control "$PARSE_PROGRAM" "build"
+		echo -e "\t|                   "--- BUILDING DEDUP ---"                   |\n\n"
+		make -f ${DEDUP_DIR}/src/Makefile $MAKE_MODE 2>&1 | tee $LOG
+		#make -f ${DEDUP_DIR}/src/Makefile bensp 2>&1 | tee $LOG
+		#echo make -f ${DEDUP}/src/Makefile bensp 2>&1 | tee $LOG
+	elif [[ "$CHANGE" = "TRUE" ]]; then
+		log_control "$PARSE_PROGRAM" "build"
+		echo -e "\t|                   "--- BUILDING DEDUP - CHANGE  ---"                   |\n\n"
+		make -f ${DEDUP_DIR}/src/Makefile $MAKE_MODE 2>&1 | tee $LOG	
+		#make -f ${DEDUP_DIR}/src/Makefile bensp 2>&1 | tee $LOG	
+	else
+		echo -e "\n\t|"------------------------ Dedup was compiled ------------------------"|\n"
+	fi
+
+	define_input "$PARSE_INPUT"
+	
+	log_control "$PARSE_PROGRAM" "run"
+	RUN="$DEDUP_DIR/bin/dedup_pthreads -c -v -t $PARSE_NTHREADS -i $PARSE_INPUT -o $TMP_DIR/ "
+	echo -e "\nRunning $RUN 2>&1 | tee $LOG \n"
+	
+	#$RUN #2>&1 | tee $LOG
+	$RUN 2>&1 | tee $LOG
+	#echo "$RUN 2>&1 | tee $LOG"
+
+}
+
+
+function ferret_run {
+
+	ACTION=""
+	LOG=""
+
+	if [[ -e ${FERRET_DIR}/bin/ferret_pthreads"" ]]; then
+		log_control "$PARSE_PROGRAM" "build"
+		echo -e "\t|                   "--- BUILDING FERRET ---"                   |\n\n"
+		make -f ${FERRET_DIR}/src/Makefile $MAKE_MODE 2>&1 | tee $LOG
+		#make -f ${DEDUP_DIR}/src/Makefile bensp 2>&1 | tee $LOG
+		#echo make -f ${DEDUP}/src/Makefile bensp 2>&1 | tee $LOG
+	elif [[ "$CHANGE" = "TRUE" ]]; then
+		log_control "$PARSE_PROGRAM" "build"
+		echo -e "\t|                   "--- BUILDING FERRET - CHANGE  ---"                   |\n\n"
+		make -f ${FERRET_DIR}/src/Makefile $MAKE_MODE 2>&1 | tee $LOG
+	else
+		echo -e "\n\t|"------------------------ Ferret was compiled ------------------------"|\n"
+	fi
+
+	define_input "$PARSE_INPUT"
+	
+	log_control "$PARSE_PROGRAM" "run"
+	RUN="$FERRET_DIR/bin/ferret-pthreads $PARSE_INPUT/dataset lsh $PARSE_INPUT/images $TO_RANK $PARSE_NTHREADS $QUE_SEG $QUE_EXT $QUE_VEC $QUE_RANK $QUE_OUT"
+	echo -e "\nRunning $RUN 2>&1 | tee $LOG \n"
+	
+	#$RUN #2>&1 | tee $LOG
+	
+	$RUN 2>&1 | tee $LOG
+	
+	#echo "$RUN 2>&1 | tee $LOG"
+
+}
+
+function check_parser {
+
+	if [[ -z "$PARSE_NTHREADS" ]]; then
+
+		PARSE_NTHREADS="$DEFAULT_NTHREADS"
+	fi
+
+	if [[ ! -z "$PARSE_PROGRAM" ]]; then
+		
+		if [[ "$PARSE_PROGRAM" == "dedup" ]]; then
+
+			CHANGE="FALSE"
+		
+			if [[ ! -z "$CHANGE" ]]; then
+				
+				#echo -e "\n Mudando Parametros \n"
+				
+				for (( i = 2; i <= $SIZE_ARRAY; i++ )); do
+					
+					CHECK=$(echo ${PARSE_ACTION} | awk -F" " '{print $'$i'}')
+					
+					if [[ "$CHECK" = "run" ]]; then
+						break;
+					else
+						echo -e "\n Mudando Parametros \n"
+					fi
+
+					if [[ "$CHECK" = "chunk" ]]; then
+						CHANGE="TRUE"
+						i=`expr $i + 1`
+						SIZE_WINDOW_FRAG=$(echo ${PARSE_ACTION} | awk -F" " '{print $'$i'}')
+						i=`expr $i - 1`
+						dedup_chunk_change "$SIZE_WINDOW_FRAG"						
+					fi
+
+					if [[ "$CHECK" = "fr" ]]; then
+						CHANGE="TRUE"
+						BUFF_NAME="#define OUT_BUFFER_FR"
+						i=`expr $i + 1`
+						VAL=$(echo ${PARSE_ACTION} | awk -F" " '{print $'$i'}')
+						i=`expr $i - 1`
+						dedup_buffer_change "$BUFF_NAME" "$VAL"						
+					fi
+
+					if [[ "$CHECK" = "dd" ]]; then
+						CHANGE="TRUE"
+						BUFF_NAME="#define OUT_BUFFER_DD"
+						i=`expr $i + 1`
+						VAL=$(echo ${PARSE_ACTION} | awk -F" " '{print $'$i'}')
+						i=`expr $i - 1`
+						dedup_buffer_change "$BUFF_NAME" "$VAL"
+
+						BUFF_NAME="#define IN_BUFFER_DD"
+						dedup_buffer_change "$BUFF_NAME" "$VAL"
+					fi
+
+					if [[ "$CHECK" = "comp" ]]; then
+						CHANGE="TRUE"
+						BUFF_NAME="#define OUT_BUFFER_COMP"
+						i=`expr $i + 1`
+						VAL=$(echo ${PARSE_ACTION} | awk -F" " '{print $'$i'}')
+						i=`expr $i - 1`
+						dedup_buffer_change "$BUFF_NAME" "$VAL"
+
+						BUFF_NAME="#define IN_BUFFER_COMP"
+						dedup_buffer_change "$BUFF_NAME" "$VAL"
+
+					fi
+
+					if [[ "$CHECK" = "rr" ]]; then
+						CHANGE="TRUE"
+						BUFF_NAME="#define OUT_BUFFER_RR"
+						i=`expr $i + 1`
+						VAL=$(echo ${PARSE_ACTION} | awk -F" " '{print $'$i'}')
+						i=`expr $i - 1`
+						dedup_buffer_change "$BUFF_NAME" "$VAL"
+
+						BUFF_NAME="#define IN_BUFFER_RR"
+						dedup_buffer_change "$BUFF_NAME" "$VAL"
+					fi
+					
+					if [[ "$CHECK" == "trace" ]]; then
+						CHANGE="TRUE"
+						MAKE_MODE="trace"
+					fi
+
+					if [[ "$CHECK" == "notrace" ]]; then
+						CHANGE="TRUE"
+						MAKE_MODE="bensp"
+					fi
+
+				done
+			fi
+			
+			dedup_run
+		fi
+
+		if [[ "$PARSE_PROGRAM" == "ferret" ]]; then
+
+			TO_RANK=5 #Imagens para rank
+			#Tamanho das filas
+			QUE_SEG=5
+			QUE_EXT=5
+			QUE_VEC=5
+			QUE_RANK=5
+			QUE_OUT=5
+
+			CHANGE="FALSE"
+			
+			if [[ ! -z "$CHANGE" ]]; then
+				
+				#echo -e "\n Mudando Parametros \n"
+				
+				for (( i = 2; i <= $SIZE_ARRAY; i++ )); do
+					
+					CHECK=$(echo ${PARSE_ACTION} | awk -F" " '{print $'$i'}')
+										
+					if [[ "$CHECK" = "run" ]]; then
+						break;
+					fi
+
+					if [[ "$CHECK" = "precision" ]]; then
+						echo -e "\n Mudando Parametros \n"
+						CHANGE="TRUE"
+						i=`expr $i + 1`
+						QVALUE=$(echo ${PARSE_ACTION} | awk -F" " '{print $'$i'}')
+						SIZEFACTOR=0.005
+						i=`expr $i - 1`
+						ferret_change_precision "$QVALUE" "$SIZEFACTOR"
+						MAKE_MODE="all"
+					fi
+
+					if [[ "$CHECK" = "seg" ]]; then
+						i=`expr $i + 1`
+						QUE_SEG=$(echo ${PARSE_ACTION} | awk -F" " '{print $'$i'}')
+						i=`expr $i - 1`
+					fi
+
+					if [[ "$CHECK" = "ext" ]]; then
+						i=`expr $i + 1`
+						QUE_EXT=$(echo ${PARSE_ACTION} | awk -F" " '{print $'$i'}')
+						i=`expr $i - 1`
+					fi
+
+					if [[ "$CHECK" = "idx" ]]; then
+						i=`expr $i + 1`
+						QUE_VEC=$(echo ${PARSE_ACTION} | awk -F" " '{print $'$i'}')
+						i=`expr $i - 1`
+					fi
+
+					if [[ "$CHECK" = "rank" ]]; then
+						i=`expr $i + 1`
+						QUE_RANK=$(echo ${PARSE_ACTION} | awk -F" " '{print $'$i'}')
+						i=`expr $i - 1`
+					fi
+
+					if [[ "$CHECK" = "out" ]]; then
+						i=`expr $i + 1`
+						QUE_OUT=$(echo ${PARSE_ACTION} | awk -F" " '{print $'$i'}')
+						i=`expr $i - 1`
+					fi
+
+					if [[ "$CHECK" = "ranking" ]]; then
+						i=`expr $i + 1`
+						TO_RANK=$(echo ${PARSE_ACTION} | awk -F" " '{print $'$i'}')
+						i=`expr $i - 1`
+					fi
+					
+					if [[ "$CHECK" == "trace" ]]; then
+						CHANGE="TRUE"
+						MAKE_MODE="all trace=trace"
+					fi
+
+					if [[ "$CHECK" == "notrace" ]]; then
+						CHANGE="TRUE"
+						MAKE_MODE="all"
+					fi
+
+				done
+			fi
+
+			ferret_run
+
+		fi
+	fi
+}
+
+parse_options "$@"
+check_parser
+
+#################################
+#-e file —True if the file exists
+#-d file —True if the file is a directory
+
+#Strings
+#-z s—(zero length) True if the string is empty
+#-n s (or just s)—(not null) True if the string is not empty

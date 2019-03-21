@@ -1,0 +1,86 @@
+@numchapentry{Introduction}{1}{Introduction}{1}
+@numchapentry{Installation}{2}{Installation}{2}
+@numchapentry{The Ferret Library}{3}{The Ferret Library}{3}
+@numsecentry{Using the Ferret Library}{3.1}{Using the Ferret Library}{3}
+@numsecentry{Portability}{3.2}{Portability}{3}
+@numsecentry{Error Handling}{3.3}{Error Handling}{3}
+@numsecentry{Utility Routines}{3.4}{Utility Routines}{3}
+@numsubsecentry{Dynamic arrrays}{3.4.1}{}{3}
+@numsubsubsecentry{Declaration}{3.4.1.1}{}{4}
+@numsubsubsecentry{Initialization}{3.4.1.2}{}{5}
+@numsubsubsecentry{Cleanup}{3.4.1.3}{}{5}
+@numsubsubsecentry{Field access}{3.4.1.4}{}{5}
+@numsubsubsecentry{Element access}{3.4.1.5}{}{5}
+@numsubsubsecentry{Element enumeration}{3.4.1.6}{}{6}
+@numsubsecentry{Heaps}{3.4.2}{}{6}
+@numsubsecentry{Maintaining top-K elements}{3.4.3}{}{7}
+@numsubsecentry{Portable file IO}{3.4.4}{}{8}
+@numsubsecentry{Timer}{3.4.5}{}{8}
+@numsubsecentry{Replacement of @code {malloc}, @code {calloc} and @code {realloc}}{3.4.6}{}{9}
+@numsubsecentry{Vectors and Matrices}{3.4.7}{}{9}
+@numsecentry{Library Initialization and Cleanup}{3.5}{Library Initialization and Cleanup}{10}
+@numsecentry{Database Environment}{3.6}{Database Environment}{10}
+@numsubsecentry{Open and close}{3.6.1}{}{10}
+@numsubsecentry{Logging}{3.6.2}{}{10}
+@numsubsecentry{Checkpointing}{3.6.3}{}{10}
+@numsubsecentry{Describing}{3.6.4}{}{11}
+@numsecentry{Mapping}{3.7}{Mapping}{11}
+@numsecentry{Vector, Vecset and Dataset}{3.8}{Vector}{11}
+@numsubsecentry{Data structures}{3.8.1}{}{11}
+@numsubsecentry{Dataset routines}{3.8.2}{}{13}
+@numsecentry{Class, Instance and Registry}{3.9}{Class}{14}
+@numsecentry{Vector Distance and Vecset Distance}{3.10}{Vector Distance and Vecset Distance}{15}
+@numsecentry{Configurations and Tables}{3.11}{Configurations and Tables}{17}
+@numsubsecentry{Table Creation}{3.11.1}{}{18}
+@numsubsecentry{Free a Table}{3.11.2}{}{19}
+@numsubsecentry{Describe a Table}{3.11.3}{}{19}
+@numsubsecentry{Import and Export Data}{3.11.4}{}{19}
+@numsubsecentry{Table Association}{3.11.5}{}{19}
+@numsubsecentry{Load and Release Feature Data}{3.11.6}{}{20}
+@numsubsecentry{Data Insertion}{3.11.7}{}{20}
+@numsecentry{Queries}{3.12}{Queries}{20}
+@numsecentry{Multiple Modality Support}{3.13}{Multiple Modality Support}{23}
+@numsecentry{Vector Distance Reference}{3.14}{Vector Distance Reference}{23}
+@numsubsecentry{Trivial distance}{3.14.1}{}{23}
+@numsubsecentry{Integer L1 distance}{3.14.2}{}{23}
+@numsubsecentry{Integer L2 distance}{3.14.3}{}{24}
+@numsubsecentry{Float L1 distance}{3.14.4}{}{24}
+@numsubsecentry{Float L2 distance}{3.14.5}{}{24}
+@numsubsecentry{Cosine distance}{3.14.6}{}{24}
+@numsubsecentry{Hamming distance}{3.14.7}{}{25}
+@numsecentry{Vecset Distance Reference}{3.15}{Vecset Distance Reference}{25}
+@numsubsecentry{Trivial distance}{3.15.1}{}{25}
+@numsubsecentry{Single distance}{3.15.2}{}{25}
+@numsubsecentry{EMD distance}{3.15.3}{}{25}
+@numsecentry{Index and Sketch Reference}{3.16}{Index and Sketch Reference}{26}
+@numsubsecentry{Raw Table}{3.16.1}{Raw Table}{26}
+@numsubsecentry{Locality Sensitive Hashing}{3.16.2}{Locality Sensitive Hashing}{26}
+@numsubsecentry{Sketch for L1 Distance}{3.16.3}{Sketch for L1 Distance}{27}
+@numsubsecentry{Sketch for L2 Distance}{3.16.4}{Sketch for L2 Distance}{27}
+@numsubsecentry{Sketch for Cosine Distance}{3.16.5}{Sketch for Cosine Distance}{28}
+@numchapentry{Data Layout}{4}{Data Layout}{29}
+@numsecentry{Memory Data Layout}{4.1}{Memory Data Layout}{29}
+@numsecentry{Directory Layout}{4.2}{Directory Layout}{29}
+@numsecentry{Data File Format}{4.3}{Data File Format}{29}
+@numsecentry{Benchmark File Format}{4.4}{Benchmark File Format}{29}
+@numchapentry{The Ferret Server}{5}{The Ferret Server}{30}
+@numchapentry{Utility Programs}{6}{Utility Programs}{31}
+@numsecentry{@command {cass_init}}{6.1}{cass_init}{31}
+@numsecentry{@command {cass_describe}}{6.2}{cass_describe}{31}
+@numsecentry{@command {cass_add_vec_dist }}{6.3}{cass_add_vec_dist}{31}
+@numsecentry{@command {cass_add_vec_set_dist}}{6.4}{cass_add_vec_set_dist}{31}
+@numsecentry{@command {cass_add_cfg}}{6.5}{cass_add_cfg}{32}
+@numsecentry{@command {cass_add_map}}{6.6}{cass_add_map}{32}
+@numsecentry{@command {cass_add_table}}{6.7}{cass_add_table}{32}
+@numsecentry{@command {cass_add_sketch}}{6.8}{cass_add_sketch}{33}
+@numsecentry{@command {cass_query}}{6.9}{cass_query}{33}
+@numsecentry{@command {cass_import}}{6.10}{cass_import}{33}
+@numsecentry{@command {cass_export}}{6.11}{cass_export}{34}
+@numchapentry{Feature Extraction}{7}{Feature Extraction}{35}
+@numsecentry{Image}{7.1}{Image}{35}
+@numchapentry{Extending Ferret}{8}{Extending Ferret}{36}
+@numsecentry{Adding New Vector Distances}{8.1}{Adding New Vector Distances}{36}
+@numsecentry{Adding New Vecset Distances}{8.2}{Adding New Vecset Distances}{36}
+@numsecentry{Adding New Indices and Sketches}{8.3}{Adding New Indices and Sketches}{36}
+@numsecentry{Supporting New Data Types}{8.4}{Supporting New Data Types}{37}
+@unnchapentry{Index}{10001}{Index}{38}

@@ -1,0 +1,11 @@
+prefix=/home/carlos/source_benchmarks/parsec-3.0/pkgs/libs/ssl/inst/amd64-linux.gcc-pthreads
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: OpenSSL
+Description: Secure Sockets Layer and cryptography libraries and tools
+Version: 0.9.8j
+Requires: 
+Libs: -L${libdir} -lssl -lcrypto -ldl
+Cflags: -I${includedir} 

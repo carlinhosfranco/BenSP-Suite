@@ -1,0 +1,542 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdfetex 2017.4.12)  19 AUG 2017 15:02
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**\input ./ferret.texi
+(./ferret.texi (/usr/share/texmf/tex/texinfo/texinfo.tex
+Loading texinfo [version 2016-02-05.07.deb2]:
+\outerhsize=\dimen16
+\outervsize=\dimen17
+\cornerlong=\dimen18
+\cornerthick=\dimen19
+\topandbottommargin=\dimen20
+\bindingoffset=\dimen21
+\normaloffset=\dimen22
+\pagewidth=\dimen23
+\pageheight=\dimen24
+\headlinebox=\box16
+\footlinebox=\box17
+\margin=\insert252
+\EMsimple=\toks13
+\groupbox=\box18
+\groupinvalidhelp=\toks14
+\mil=\dimen25
+\exdentamount=\skip18
+\inmarginspacing=\skip19
+\centerpenalty=\count27
+ pdf,
+\tempnum=\count28
+\lnkcount=\count29
+\filename=\toks15
+\filenamelength=\count30
+\pgn=\count31
+\toksA=\toks16
+\toksB=\toks17
+\toksC=\toks18
+\toksD=\toks19
+\boxA=\box19
+\boxB=\box20
+\countA=\count32
+\nopdfimagehelp=\toks20
+ fonts,
+\sffam=\fam8
+\textleading=\dimen26
+ markup,
+\fontdepth=\count33
+ glyphs,
+\errorbox=\box21
+
+page headings,
+\titlepagetopglue=\skip20
+\titlepagebottomglue=\skip21
+\evenheadline=\toks21
+\oddheadline=\toks22
+\evenfootline=\toks23
+\oddfootline=\toks24
+ tables,
+\tableindent=\dimen27
+\itemindent=\dimen28
+\itemmargin=\dimen29
+\itemmax=\dimen30
+\itemno=\count34
+\multitableparskip=\skip22
+\multitableparindent=\skip23
+\multitablecolspace=\dimen31
+\multitablelinespace=\skip24
+\colcount=\count35
+\everytab=\toks25
+ conditionals,
+\doignorecount=\count36
+ indexing,
+\dummybox=\box22
+\whatsitskip=\skip25
+\whatsitpenalty=\count37
+\entryrightmargin=\dimen32
+\thinshrinkable=\skip26
+\entryindexbox=\box23
+\entrylinedepth=\dimen33
+\secondaryindent=\skip27
+\partialpage=\box24
+\doublecolumnhsize=\dimen34
+\doublecolumntopgap=\dimen35
+\savedtopmark=\toks26
+\savedfirstmark=\toks27
+\balancedcolumns=\box25
+ sectioning,
+\unnumberedno=\count38
+\chapno=\count39
+\secno=\count40
+\subsecno=\count41
+\subsubsecno=\count42
+\appendixno=\count43
+\absseclevel=\count44
+\secbase=\count45
+\chapheadingskip=\skip28
+\secheadingskip=\skip29
+\subsecheadingskip=\skip30
+ toc,
+\tocfile=\write0
+\contentsrightmargin=\skip31
+\savepageno=\count46
+\lastnegativepageno=\count47
+\tocindent=\dimen36
+ environments,
+\lispnarrowing=\skip32
+\envskipamount=\skip33
+\circthick=\dimen37
+\cartouter=\dimen38
+\cartinner=\dimen39
+\normbskip=\skip34
+\normpskip=\skip35
+\normlskip=\skip36
+\lskip=\skip37
+\rskip=\skip38
+\nonfillparindent=\dimen40
+\tabw=\dimen41
+\verbbox=\box26
+
+defuns,
+\defbodyindent=\skip39
+\defargsindent=\skip40
+\deflastargmargin=\skip41
+\defunpenalty=\count48
+\parencount=\count49
+\brackcount=\count50
+ macros,
+\paramno=\count51
+\macname=\toks28
+ cross references,
+\auxfile=\write1
+\savesfregister=\count52
+\toprefbox=\box27
+\printedrefnamebox=\box28
+\infofilenamebox=\box29
+\printedmanualbox=\box30
+ insertions,
+\footnoteno=\count53
+\SAVEfootins=\box31
+\SAVEmargin=\box32
+
+(/usr/share/texlive/texmf-dist/tex/generic/epsf/epsf.tex
+This is `epsf.tex' v2.7.4 <14 February 2011>
+\epsffilein=\read1
+\epsfframemargin=\dimen42
+\epsfframethickness=\dimen43
+\epsfrsize=\dimen44
+\epsftmp=\dimen45
+\epsftsize=\dimen46
+\epsfxsize=\dimen47
+\epsfysize=\dimen48
+\pspoints=\dimen49
+)
+\noepsfhelp=\toks29
+ localization,
+\nolanghelp=\toks30
+\countUTFx=\count54
+\countUTFy=\count55
+\countUTFz=\count56
+ formatting,
+\defaultparindent=\dimen50
+ and turning on texinfo input format.) [1{/var/lib/texmf/fonts/map/pdftex/updma
+p/pdftex.map}] [2]
+(/home/carlos/source_code_benchmarks/parsec-ORI/pkgs/apps/ferret/src/doc/manual
+/ferret.toc) [-1]
+(/home/carlos/source_code_benchmarks/parsec-ORI/pkgs/apps/ferret/src/doc/manual
+/ferret.toc [-2] [-3]) [-4]
+(/home/carlos/source_code_benchmarks/parsec-ORI/pkgs/apps/ferret/src/doc/manual
+/ferret.toc)
+(/home/carlos/source_code_benchmarks/parsec-ORI/pkgs/apps/ferret/src/doc/manual
+/ferret.toc) Chapter 1
+\openout0 = `ferret.toc'.
+
+
+(/home/carlos/source_code_benchmarks/parsec-ORI/pkgs/apps/ferret/src/doc/manual
+/ferret.aux)
+\openout1 = `ferret.aux'.
+
+texinfo.tex: doing @include of intro.texi
+
+
+(/home/carlos/source_code_benchmarks/parsec-ORI/pkgs/apps/ferret/src/doc/manual
+/intro.texi) Chapter 2 [1]
+texinfo.tex: doing @include of install.texi
+
+
+(/home/carlos/source_code_benchmarks/parsec-ORI/pkgs/apps/ferret/src/doc/manual
+/install.texi) Chapter 3 [2]
+texinfo.tex: doing @include of library.texi
+
+
+(/home/carlos/source_code_benchmarks/parsec-ORI/pkgs/apps/ferret/src/doc/manual
+/library.texi [3] [4] [5] [6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 388--389
+ []@texttt /* @textttsl type @texttt can be one of { int32, uint32, uint64, siz
+e, float, double,
+
+@hbox(7.60416+2.43333)x433.62
+.@glue(@leftskip) 57.81621
+.@hbox(0.0+0.0)x0.0
+.@texttt /
+.@texttt *
+.@glue(@spaceskip) 3.65
+.etc.
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 449--450
+ []@textttsl type ** @texttt type_matrix_alloc (@textttsl (@texttt type), cass_
+size_t row, cass_size_t
+
+@hbox(7.60416+2.43333)x433.62
+.@glue(@leftskip) 57.81621
+.@hbox(0.0+0.0)x0.0
+.@textttsl t
+.@textttsl y
+.@textttsl p
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--455
+ []@textttsl type *** @texttt type_matrix3_alloc (@textttsl (@texttt type), cas
+s_size_t num, cass_size_t
+
+@hbox(7.60416+2.43333)x433.62
+.@glue(@leftskip) 57.81621
+.@hbox(0.0+0.0)x0.0
+.@textttsl t
+.@textttsl y
+.@textttsl p
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--465
+ @textit Prototype:@texttt int type_matrix_load_stream (@textttsl type@texttt ,
+ FILE *stream, cass_size_t *row,
+
+@hbox(7.60416+2.43333)x433.62
+.@glue(@leftskip) 57.81621
+.@penalty 10000
+.@kern -57.81621
+.@textit P
+.@textit r
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 468--469
+ []@texttt int type_matrix_load_file (@textttsl type@texttt , const char *path,
+ cass_size_t
+
+@hbox(7.60416+2.43333)x433.62
+.@glue(@leftskip) 57.81621
+.@hbox(0.0+0.0)x0.0
+.@texttt i
+.@texttt n
+.@texttt t
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 472--473
+ []@texttt int type_matrix_dump_stream (@textttsl type@texttt , FILE *stream, c
+ass_size_t row,
+
+@hbox(7.60416+2.43333)x433.62
+.@glue(@leftskip) 57.81621
+.@hbox(0.0+0.0)x0.0
+.@texttt i
+.@texttt n
+.@texttt t
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 476--477
+ []@texttt int type_matrix_dump_file (@textttsl type@texttt , const char *path,
+ cass_size_t row,
+
+@hbox(7.60416+2.43333)x433.62
+.@glue(@leftskip) 57.81621
+.@hbox(0.0+0.0)x0.0
+.@texttt i
+.@texttt n
+.@texttt t
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 481--485
+ @textit Prototype:@texttt int type_matrix_map_file (@textttsl type@texttt , co
+nst char *path, cass_size_t *row,
+
+@hbox(7.60416+2.43333)x433.62
+.@glue(@leftskip) 57.81621
+.@penalty 10000
+.@kern -57.81621
+.@textit P
+.@textit r
+.etc.
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 509--511
+ @textit Prototype:@texttt int cass_env_open (cass_env_t **env, char *db_home, 
+uint32_t
+
+@hbox(7.60416+2.43333)x433.62
+.@glue(@leftskip) 57.81621
+.@penalty 10000
+.@kern -57.81621
+.@textit P
+.@textit r
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 538--540
+ @textit Prototype:@texttt int cass_env_errmsg(cass_env_t *env, int error, cons
+t char *fmt,
+
+@hbox(7.60416+2.43333)x433.62
+.@glue(@leftskip) 57.81621
+.@penalty 10000
+.@kern -57.81621
+.@textit P
+.@textit r
+.etc.
+
+[10] [11] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 698--701
+ @textit Prototype:@texttt int cass_dataset_init (cass_dataset_t *ds, cass_size
+_t vec_size,
+
+@hbox(7.60416+2.12917)x433.62
+.@glue(@leftskip) 57.81621
+.@penalty 10000
+.@kern -57.81621
+.@textit P
+.@textit r
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 704--707
+ @textit Prototype:@texttt int cass_dataset_grow (cass_dataset_t *ds, cass_size
+_t num_vecset,
+
+@hbox(7.60416+2.43333)x433.62
+.@glue(@leftskip) 57.81621
+.@penalty 10000
+.@kern -57.81621
+.@textit P
+.@textit r
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 717--721
+ @textit Prototype:@texttt int cass_dataset_merge (cass_dataset_t *ds, const ca
+ss_dataset_t
+
+@hbox(7.60416+2.43333)x433.62
+.@glue(@leftskip) 57.81621
+.@penalty 10000
+.@kern -57.81621
+.@textit P
+.@textit r
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 717--721
+ @texttt *src, cass_vecset_id_t start, cass_vecset_id_t num, cass_dataset_
+
+@hbox(6.69167+1.52081)x433.62
+.@glue(@leftskip) 57.81621
+.@texttt *
+.@texttt s
+.@texttt r
+.@texttt c
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 729--732
+ @textit Prototype:@texttt int cass_dataset_checkpoint (cass_dataset_t *ds, CAS
+S_FILE *);[] int
+
+@hbox(7.60416+2.43333)x433.62, glue set 4.92195
+.@glue(@leftskip) 57.81621
+.@penalty 10000
+.@kern -57.81621
+.@textit P
+.@textit r
+.etc.
+
+[13] [14] [15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 978--979
+ []@texttt int32_t cass_vecset_dist_class_find (const cass_vecset_dist_class_
+
+@hbox(7.60416+1.04173)x433.62
+.@glue(@leftskip) 57.81621
+.@hbox(0.0+0.0)x0.0
+.@texttt i
+.@texttt n
+.@texttt t
+.etc.
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1060
+ @textit Prototype:@texttt int cass_table_create (cass_table_t **table, cass_en
+v_t *env, char
+
+@hbox(7.60416+2.12917)x433.62
+.@glue(@leftskip) 57.81621
+.@penalty 10000
+.@kern -57.81621
+.@textit P
+.@textit r
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1060
+ @texttt *table_name, uint32_t opr_id, int32_t cfg_id, int32_t parent_id,
+
+@hbox(6.69167+2.43333)x433.62
+.@glue(@leftskip) 57.81621
+.@texttt *
+.@texttt t
+.@texttt a
+.@texttt b
+.etc.
+
+[18] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 1165--1168
+ @textit Prototype:@texttt int cass_table_batch_insert (cass_table_t *table, ca
+ss_dataset_t
+
+@hbox(7.60416+2.12917)x433.62
+.@glue(@leftskip) 57.81621
+.@penalty 10000
+.@kern -57.81621
+.@textit P
+.@textit r
+.etc.
+
+[20] [21] [22]
+Underfull \hbox (badness 10000) in paragraph at lines 1330--1333
+ @textit Prototype:@texttt int cass_table_query (cass_table_t *table, cass_quer
+y_t *query,
+
+@hbox(7.60416+2.43333)x433.62
+.@glue(@leftskip) 57.81621
+.@penalty 10000
+.@kern -57.81621
+.@textit P
+.@textit r
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1335--1336
+ []@texttt int cass_table_batch_query (cass_table_t *table, uint32_t count,
+
+@hbox(7.60416+2.43333)x433.62
+.@glue(@leftskip) 57.81621
+.@hbox(0.0+0.0)x0.0
+.@texttt i
+.@texttt n
+.@texttt t
+.etc.
+
+texinfo.tex: doing @include of vecdist.texi
+
+
+(/home/carlos/source_code_benchmarks/parsec-ORI/pkgs/apps/ferret/src/doc/manual
+/vecdist.texi [23] [24])
+texinfo.tex: doing @include of vecsetdist.texi
+
+
+(/home/carlos/source_code_benchmarks/parsec-ORI/pkgs/apps/ferret/src/doc/manual
+/vecsetdist.texi [25])
+texinfo.tex: doing @include of index.texi
+
+
+(/home/carlos/source_code_benchmarks/parsec-ORI/pkgs/apps/ferret/src/doc/manual
+/index.texi [26] [27])) Chapter 4 [28]
+texinfo.tex: doing @include of layout.texi
+
+
+(/home/carlos/source_code_benchmarks/parsec-ORI/pkgs/apps/ferret/src/doc/manual
+/layout.texi) Chapter 5 [29]
+texinfo.tex: doing @include of server.texi
+
+
+(/home/carlos/source_code_benchmarks/parsec-ORI/pkgs/apps/ferret/src/doc/manual
+/server.texi) Chapter 6 [30]
+texinfo.tex: doing @include of util.texi
+
+
+(/home/carlos/source_code_benchmarks/parsec-ORI/pkgs/apps/ferret/src/doc/manual
+/util.texi [31] [32]
+Underfull \hbox (badness 10000) in paragraph at lines 188--191
+ @textit Synopsis:@texttt cass_query <@textttsl path@texttt > <@textttsl ta-ble
+@texttt > <@textttsl bench-mark@texttt > <@textttsl #query@texttt > <@textttsl 
+K@texttt > <@textttsl T1@texttt > <@textttsl T2@texttt >
+
+@hbox(7.48248+2.43333)x433.62
+.@glue(@leftskip) 57.81621
+.@penalty 10000
+.@kern -57.81621
+.@textit S
+.@textit y
+.etc.
+
+[33]) Chapter 7 [34]
+texinfo.tex: doing @include of feature.texi
+
+
+(/home/carlos/source_code_benchmarks/parsec-ORI/pkgs/apps/ferret/src/doc/manual
+/feature.texi) Chapter 8 [35]
+texinfo.tex: doing @include of extend.texi
+
+
+(/home/carlos/source_code_benchmarks/parsec-ORI/pkgs/apps/ferret/src/doc/manual
+/extend.texi [36]) (Index) [37] [38] ) 
+Here is how much of TeX's memory you used:
+ 3573 strings out of 495071
+ 40831 string characters out of 6160654
+ 78701 words of memory out of 5000000
+ 4913 multiletter control sequences out of 15000+600000
+ 32778 words of font info for 114 fonts, out of 8000000 for 9000
+ 1178 hyphenation exceptions out of 8191
+ 18i,6n,16p,288b,721s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsltt10.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on ferret.pdf (44 pages, 240817 bytes).
+PDF statistics:
+ 688 PDF objects out of 1000 (max. 8388607)
+ 619 compressed objects within 7 object streams
+ 97 named destinations out of 1000 (max. 500000)
+ 701 words of extra memory for PDF output out of 10000 (max. 10000000)
+

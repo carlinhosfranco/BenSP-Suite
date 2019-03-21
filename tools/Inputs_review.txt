@@ -1,0 +1,62 @@
+####################################################
+dedup
+	heavy_duty
+		h3:
+			- audio1.tar 54/14
+			- audio2.tar 68/34
+			- audio_video.tar 21/10
+		h2:
+			- txt_files_15R.tar 10/5
+		h1:
+			- images1.tar {3500,256}/{500,256}
+			- images2.tar {256,8,10,11,12,31,33}/{256}
+			- images3.tar {12dir}/{5dir}
+			- images4.tar {30}/{5} 
+			- images5.tar {618}/{276}
+
+	light_duty
+		h3:
+		h2:
+		h1:
+
+	test
+####################################################
+ferret
+	heavy_duty
+		h3:
+			- 
+		h2:
+			- 
+		h1:
+			- 
+
+	light_duty
+		h3:
+			-
+		h2:
+			-
+		h1:
+			-
+
+	test
+
+####################################################
+DPI
+	heavy_duty
+		h3:
+			- 
+		h2:
+			- 
+		h1:
+			- 
+
+	light_duty
+		h3:
+			-
+		h2:
+			-
+		h1:
+			-
+
+	test
+

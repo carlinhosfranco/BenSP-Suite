@@ -1,0 +1,181 @@
+mkdir -p /home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/bin
+mkdir -p /home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/lib
+mkdir -p /home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/heap.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/heap.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/stat.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/stat.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/cass_reg.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/cass_reg.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/assign.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/assign.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/error.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/error.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/queue.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/queue.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/arena.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/arena.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/env.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/env.o'
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/env.c: In function ‘cass_env_errmsg’:
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/env.c:25:2: warning: #warning to be elaborated. [-Wcpp]
+ #warning to be elaborated.
+  ^
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/env.c: In function ‘cass_env_checkpoint’:
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/env.c:249:2: warning: #warning add file switch [-Wcpp]
+ #warning add file switch
+  ^
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/dist.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/dist.o'
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/dist.c:110:10: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+  .dist = __dist_L1_int32,
+          ^
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/dist.c:110:10: note: (near initialization for ‘vec_dist_L1_int.dist’)
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/dist.c:130:10: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+  .dist = __dist_L2_int32,
+          ^
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/dist.c:130:10: note: (near initialization for ‘vec_dist_L2_int.dist’)
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/dist.c:145:10: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+  .dist = dist_L1_float,
+          ^
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/dist.c:145:10: note: (near initialization for ‘vec_dist_L1_float.dist’)
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/dist.c:160:10: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+  .dist = dist_L2_float,
+          ^
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/dist.c:160:10: note: (near initialization for ‘vec_dist_L2_float.dist’)
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/dist.c:175:10: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+  .dist = dist_cos_float,
+          ^
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/dist.c:175:10: note: (near initialization for ‘vec_dist_cos_float.dist’)
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/dist.c:195:10: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+  .dist = __dist_hamming,
+          ^
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/dist.c:195:10: note: (near initialization for ‘vec_dist_hamming.dist’)
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/tpool.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/tpool.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/topk.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/topk.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/table.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/table.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/util.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/util.o'
+In file included from /home/carlos/svn/BenSP_suite/apps/ferret/src/include/cass.h:44:0,
+                 from /home/carlos/svn/BenSP_suite/apps/ferret/src/src/util.c:26:
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/util.c: In function ‘cass_result_free’:
+/home/carlos/svn/BenSP_suite/apps/ferret/src/include/cass_array.h:155:13: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+    cursor = (array).data + __array_foreach_index;
+             ^
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/util.c:225:3: note: in expansion of macro ‘ARRAY_BEGIN_FOREACH_P’
+   ARRAY_BEGIN_FOREACH_P(result->u.bitmaps, cass_map_t *map)
+   ^
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/util.c:227:20: warning: passing argument 1 of ‘bitmap_free_vec’ from incompatible pointer type [-Wincompatible-pointer-types]
+    bitmap_free_vec(map); 
+                    ^
+In file included from /home/carlos/svn/BenSP_suite/apps/ferret/src/include/cass.h:49:0,
+                 from /home/carlos/svn/BenSP_suite/apps/ferret/src/src/util.c:26:
+/home/carlos/svn/BenSP_suite/apps/ferret/src/include/cass_bitmap.h:41:5: note: expected ‘bitmap_t * {aka struct bitmap_t *}’ but argument is of type ‘cass_map_t * {aka struct cass_map_t *}’
+ int bitmap_free_vec(bitmap_t *map); 
+     ^
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/cass.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/cass.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/raw.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/raw.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/cuckoo_hash.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/cuckoo_hash.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/hash.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/hash.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/timer.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/timer.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/emd.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/emd.o'
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/emd.c: In function ‘emd’:
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/emd.c:118:12: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   state->C = C;
+            ^
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/cass_dist.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/cass_dist.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/bitmap.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/bitmap.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/map.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/map.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/import.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/import.o'
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/import.c:34:2: warning: #warning to be extended to allow external id [-Wcpp]
+ #warning to be extended to allow external id
+  ^
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/dataset.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/dataset.o'
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/dataset.c: In function ‘cass_dataset_merge’:
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/dataset.c:158:8: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+    map = memcpy;
+        ^
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/dataset.c:159:16: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+    map_param = (void *)ds->vec_size;
+                ^
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/tp.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/tp.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/matrix.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/matrix.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/hash_table.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/hash_table.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/bench.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/bench.o'
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/bench.c: In function ‘benchT_read’:
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/bench.c:39:3: warning: ignoring return value of ‘fscanf’, declared with attribute warn_unused_result [-Wunused-result]
+   fscanf(fp, "%d", &(query->knn));
+   ^
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/bench.c:48:4: warning: ignoring return value of ‘fscanf’, declared with attribute warn_unused_result [-Wunused-result]
+    fscanf(fp, "%d", &(query->nabors[j])); 
+    ^
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/bench.c:49:4: warning: ignoring return value of ‘fscanf’, declared with attribute warn_unused_result [-Wunused-result]
+    fscanf(fp, "%g", &(query->dist[j])); 
+    ^
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/lsh/LSH_query.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/LSH_query.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/lsh/LSH_query_batch.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/LSH_query_batch.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/lsh/LSH.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/LSH.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/lsh/perturb.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/perturb.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/lsh/local.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/local.o'
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/lsh/local.c: In function ‘print_state’:
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/lsh/local.c:101:18: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 3 has type ‘size_t {aka long unsigned int}’ [-Wformat=]
+  fprintf(stderr, "iter = %3u x = %.3f %.3f "
+                  ^
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/src/lsh/recall.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/recall.o'
+In file included from /home/carlos/svn/BenSP_suite/apps/ferret/src/include/cass.h:47:0,
+                 from /home/carlos/svn/BenSP_suite/apps/ferret/src/src/lsh/LSH.h:4,
+                 from /home/carlos/svn/BenSP_suite/apps/ferret/src/src/lsh/recall.c:28:
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/lsh/recall.c: In function ‘LSH_recall_load’:
+/home/carlos/svn/BenSP_suite/apps/ferret/src/include/cass_matrix.h:54:11: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   *matrix = ___p; \
+           ^
+/home/carlos/svn/BenSP_suite/apps/ferret/src/src/lsh/recall.c:129:2: note: in expansion of macro ‘type_matrix_load_stream’
+  type_matrix_load_stream(float, fin, &row, &col, &recall->table);
+  ^
+   A  '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/lib/libcass.a'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/benchmark/ferret-pthreads.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/ferret-pthreads.o'
+/home/carlos/svn/BenSP_suite/apps/ferret/src/benchmark/ferret-pthreads.c: In function ‘t_seg’:
+/home/carlos/svn/BenSP_suite/apps/ferret/src/benchmark/ferret-pthreads.c:501:27: warning: passing argument 2 of ‘dequeue’ from incompatible pointer type [-Wincompatible-pointer-types]
+   if(dequeue(&q_load_seg, &load) < 0)
+                           ^
+In file included from /home/carlos/svn/BenSP_suite/apps/ferret/src/benchmark/ferret-pthreads.c:44:0:
+/home/carlos/svn/BenSP_suite/apps/ferret/src/include/queue.h:19:6: note: expected ‘void **’ but argument is of type ‘struct load_data **’
+ int  dequeue(struct queue* que, void** to_buf);
+      ^
+/home/carlos/svn/BenSP_suite/apps/ferret/src/benchmark/ferret-pthreads.c:520:17: warning: passing argument 1 of ‘image_segment’ from incompatible pointer type [-Wincompatible-pointer-types]
+   image_segment(&seg->mask, &seg->nrgn, load->RGB, load->width, load->height);
+                 ^
+In file included from /home/carlos/svn/BenSP_suite/apps/ferret/src/benchmark/ferret-pthreads.c:42:0:
+/home/carlos/svn/BenSP_suite/apps/ferret/src/include/../image/image.h:31:5: note: expected ‘void **’ but argument is of type ‘unsigned char **’
+ int image_segment (void **output, int *num_ccs, void *pixels, int width, int height);
+     ^
+/home/carlos/svn/BenSP_suite/apps/ferret/src/benchmark/ferret-pthreads.c: In function ‘t_extract’:
+/home/carlos/svn/BenSP_suite/apps/ferret/src/benchmark/ferret-pthreads.c:548:30: warning: passing argument 2 of ‘dequeue’ from incompatible pointer type [-Wincompatible-pointer-types]
+   if(dequeue(&q_seg_extract, &seg) < 0)
+                              ^
+In file included from /home/carlos/svn/BenSP_suite/apps/ferret/src/benchmark/ferret-pthreads.c:44:0:
+/home/carlos/svn/BenSP_suite/apps/ferret/src/include/queue.h:19:6: note: expected ‘void **’ but argument is of type ‘struct seg_data **’
+ int  dequeue(struct queue* que, void** to_buf);
+      ^
+/home/carlos/svn/BenSP_suite/apps/ferret/src/benchmark/ferret-pthreads.c: In function ‘t_vec’:
+/home/carlos/svn/BenSP_suite/apps/ferret/src/benchmark/ferret-pthreads.c:591:30: warning: passing argument 2 of ‘dequeue’ from incompatible pointer type [-Wincompatible-pointer-types]
+   if(dequeue(&q_extract_vec, &extract) < 0)
+                              ^
+In file included from /home/carlos/svn/BenSP_suite/apps/ferret/src/benchmark/ferret-pthreads.c:44:0:
+/home/carlos/svn/BenSP_suite/apps/ferret/src/include/queue.h:19:6: note: expected ‘void **’ but argument is of type ‘struct extract_data **’
+ int  dequeue(struct queue* que, void** to_buf);
+      ^
+/home/carlos/svn/BenSP_suite/apps/ferret/src/benchmark/ferret-pthreads.c: In function ‘t_rank’:
+/home/carlos/svn/BenSP_suite/apps/ferret/src/benchmark/ferret-pthreads.c:653:27: warning: passing argument 2 of ‘dequeue’ from incompatible pointer type [-Wincompatible-pointer-types]
+   if(dequeue(&q_vec_rank, &vec) < 0)
+                           ^
+In file included from /home/carlos/svn/BenSP_suite/apps/ferret/src/benchmark/ferret-pthreads.c:44:0:
+/home/carlos/svn/BenSP_suite/apps/ferret/src/include/queue.h:19:6: note: expected ‘void **’ but argument is of type ‘struct vec_query_data **’
+ int  dequeue(struct queue* que, void** to_buf);
+      ^
+/home/carlos/svn/BenSP_suite/apps/ferret/src/benchmark/ferret-pthreads.c: In function ‘t_out’:
+/home/carlos/svn/BenSP_suite/apps/ferret/src/benchmark/ferret-pthreads.c:754:27: warning: passing argument 2 of ‘dequeue’ from incompatible pointer type [-Wincompatible-pointer-types]
+   if(dequeue(&q_rank_out, &rank) < 0)
+                           ^
+In file included from /home/carlos/svn/BenSP_suite/apps/ferret/src/benchmark/ferret-pthreads.c:44:0:
+/home/carlos/svn/BenSP_suite/apps/ferret/src/include/queue.h:19:6: note: expected ‘void **’ but argument is of type ‘struct rank_data **’
+ int  dequeue(struct queue* que, void** to_buf);
+      ^
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/image/image.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/image.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/image/extract.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/extract.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/image/edge.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/edge.o'
+   CC '/home/carlos/svn/BenSP_suite/apps/ferret/src/image/srm.c' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/srm.o'
+   A  '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/lib/libcassimage.a'
+   CXX '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/ferret-pthreads.o' ==> '/home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/bin/ferret-pthreads'
+mv /home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/bin/ferret-pthreads /home/carlos/svn/BenSP_suite/apps/ferret/bin/
+rm /home/carlos/svn/BenSP_suite/apps/ferret/src/bensp_ferret/obj/*
