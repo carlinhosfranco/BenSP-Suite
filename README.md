@@ -21,10 +21,14 @@ Set of scripts to automate experiments.
 #### - tools
 Other tools created for BenSP.
 
+## Dependences 
+
+[Utility Performance Library (UPL)](https://github.com/dalvangriebler/upl).
+
 ## How to use BenSP
 Start by installing all applications dependencies.
 
-`command line to install`
+`sudo apt-get install make build-essential m4 x11proto-xext-dev libglu1-mesa-dev libxi-dev libxmu-dev libtbb-dev libbz2-dev zlib1g-dev libgsl-dev libjpeg-dev`
 
 BenSP Suite has several tools, librearies and files in many directories. In order to improve your experience with BenSP, the `parsec_stream` tool was built to parameterize, compile and run the BenSP benchmarks. Moreover, the tool organizes all logs of compiling and executing. To use `parsec_stream`, you must load the environment variables by executing the command line bellow:
 
