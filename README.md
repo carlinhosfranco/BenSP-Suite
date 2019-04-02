@@ -36,7 +36,7 @@ BenSP Suite has several tools, librearies and files in many directories. In orde
 
 BenSP Suite offers input sets to use. You can download the input sets by executing the script `download_input_sets.sh`. (The script will require your contact information and how/here the inputs will be used.) Moreover, the benchmarks support your own custom input sets. If you wish to create another input, consider the related details shown [here](#how-to-create-your-own-custom-input-set-for-dedup-and-ferret).
 
-The `parsec_stream` tool makes easier your use of BenSP to evaluate the characteristics of Stream Processing. If it's your first time using of parametric benchmarks for this Stream Processing Domain, it's recommended that you understand the main parameterizable characteristics available in BenSP benchmarks. Basic information is presented [here] as well as on your articles.
+The `parsec_stream` tool makes easier your use of BenSP to evaluate the characteristics of Stream Processing. If it's your first time using of parametric benchmarks for this Stream Processing Domain, it's recommended that you understand the main parameterizable characteristics available in BenSP benchmarks. Basic information is presented [here] as well as on [GMAP](https://gmap.pucrs.br/gmap/) publications.
 
 The main arguments in `parsec_stream` are:
 
@@ -48,6 +48,17 @@ The main arguments in `parsec_stream` are:
         -h               Displays the help message.
 ```
 If your choice was the `run` option or you didn't do any execution with change before, the `parsec_stream` will be use as default the values from original PARSEC version.
+
+### Examples of usage
+
+`parsec_stream -p dedup -r 12 -i h1 -a chunk 2048 fr 40 dd 40 comp 40 rr 40 notrace`
+
+`parsec_stream -p dedup -r 12 -i hs -a chunk 1024 dd 40 comp 40 fr 40 rr 40 trace`
+
+`parsec_stream -p ferret -r 2 -i l1 -a precision 128`
+
+`parsec_stream -p ferret -t 12 -i h2 -a precision 128 seg 5 ext 5 idx 5 rank 5 ranking 50 notrace`
+
 
 ## How to create your own custom input set for Dedup and Ferret
 
