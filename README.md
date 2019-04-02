@@ -1,6 +1,8 @@
 #       Benchmark for Stream Parallelism - BenSP
 
-BenSP os a suite of parameterizable benchmarks for stream parallelism which is used to evaluate stream processing characteristics.
+BenSP is a suite of parameterizable benchmarks for stream parallelism which is used to evaluate stream processing characteristics.
+
+Please, feel free to contact me: francocaam at gmail dot com
 
 ## How to cite BenSP
 
