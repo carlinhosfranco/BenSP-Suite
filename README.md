@@ -9,53 +9,49 @@ C. A. F. Maron, A. Vogel, D. Griebler and L. G. Fernandes. **Should PARSEC Bench
 ## Folders Descripition
 
 #### - LICENCE
-Contains the licenses of PARSEC, GPLv3 and images licence used in the input sets.
+Contains the licenses of PARSEC, GPLv3 and from the images used in the input sets.
 #### - apps
 Dedup and Ferret applications (for now).
 #### - bin
-Tool of the BenSP that manages the applications. The `parsec_stream` is the tool to execute, compile, and parameterize the Dedup and Ferret applications.
+BenSP's utilies to manage the applications. The `parsec_stream` is the utility to compile, parameterize and execute the Dedup and Ferret applications.
 #### - logs
 Folder to save all logs from BenSP.
 #### - testbed
-Set of scripts to automatize experiments.
+Set of scripts to automate experiments.
 #### - tools
 Other tools created for BenSP.
 
-
-<!--- ## Requirements [Sorry...](https://media.giphy.com/media/52qtwCtj9OLTi/giphy.gif)--->
-
 ## How to use BenSP
-First, you must install all applications dependencies.
+Start by installing all applications dependencies.
 
 `command line to install`
 
-BenSP Suite has several tools, librearies and files in many directories. To let your BenSP experience easier, the `parsec_stream` tool was built to parameterize, compile and run the BenSP benchmarks. Moreover, the tool organizes all logs of compilation and execution. To use `parsec_stream`, you must load the environment variables executing the command line bellow:
+BenSP Suite has several tools, librearies and files in many directories. In order to improve your experience with BenSP, the `parsec_stream` tool was built to parameterize, compile and run the BenSP benchmarks. Moreover, the tool organizes all logs of compiling and executing. To use `parsec_stream`, you must load the environment variables by executing the command line bellow:
 
-`command line to load`
+`source envorinment_var.sh`
 
-BenSP Suite offers an input set to use. You can download the inputs set executing the script `download_input_sets.sh`. (The script will require your contact information and how/here the inputs will be used.) However, the benchmarks support your own input sets. If you wish to create another input, you need attention in some details [here](#how-to-create-your-own-input-set-for-dedup-and-ferret).
+BenSP Suite offers input sets to use. You can download the input sets by executing the script `download_input_sets.sh`. (The script will require your contact information and how/here the inputs will be used.) Moreover, the benchmarks support your own custom input sets. If you wish to create another input, consider the related details shown [here](#how-to-create-your-own-custom-input-set-for-dedup-and-ferret).
 
-The `parsec_stream` tool makes easier your use of BenSP to evaluate the characteristics of Stream Processing. If it's your first use of parameterization benchmarks for this Stream Processing Domain, it's recommended that you understand the main parameterizable characteristics available in BenSP benchmarks. You can get this knowledge in [here] and read our article too.
+The `parsec_stream` tool makes easier your use of BenSP to evaluate the characteristics of Stream Processing. If it's your first time using of parametric benchmarks for this Stream Processing Domain, it's recommended that you understand the main parameterizable characteristics available in BenSP benchmarks. Basic information is presented [here] as well as on your articles.
 
 The main arguments in `parsec_stream` are:
 
 ```
-        -p PROGRAM       Program that will perform.
-        -i INPUT         Input set to run the benchmarks. Default: '$default_inputsize'.
-        -r REPLICAS      Number of replicas. Default: '$default_nreplicas'.
-        -a ACTION        What do you do? run or change. See below for a list of valid changes.
+        -p PROGRAM       binary that will be run
+        -i INPUT         Input set used by the benchmark. Default: '$default_inputsize'
+        -n REPLICAS      Number of parallel replicas. Default: '$default_nreplicas'
+        -a ACTION        What do you want to do? run or change. See below for a list of valid changes.
         -h               Displays the help message.
 ```
-If your choice was `run` option or you didn't do before any execution with change, the `parsec_stream` will be use as default the values found in original PARSEC version.
+If your choice was the `run` option or you didn't do any execution with change before, the `parsec_stream` will be use as default the values from original PARSEC version.
 
-
-## How to create your own input set for Dedup and Ferret
+## How to create your own custom input set for Dedup and Ferret
 
 Dedup and Ferret by BenSP Suite were modified from the original PARSEC version. To create your own input set, there are some details to follow. All limitations can be improved.
 
 * Dedup  
-The Dedup application supports more then one file, unlike the original PARSE version. However, these files must be in TAR format. Inside these files you can put any type of file.
-This is a technical limitation of Dedup. The function that reads the file only processes TAR files.
+The Dedup application supports more then one file, unlike the original PARSEC version. However, these files must be in TAR format. Inside these files you can put any file type or format.
+This is a technical limitation of Dedup. The function that reads the files only processes TAR files.
 
 * Ferret
-The Ferret application supports only JPEG/JPG images. Although the application was made to process image, audio, video and 3D shapes, the PARSEC version of Ferret only processes images.
+The Ferret application supports only JPEG/JPG images. Although the application was made to process image, audio, video and 3D shapes, the PARSEC version of Ferret only accepts images as input.
