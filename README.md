@@ -49,7 +49,7 @@ The main arguments in `parsec_stream` are:
         -a ACTION        What do you want to do? run or change. See below for a list of valid changes.
         -h               Displays the help message.
 ```
-If your choice was the `run` option or you didn't do any execution with change before, the `parsec_stream` will be use as default the values from original PARSEC version.
+If your choice was the `run` option or you didn't do any execution with change before, the `parsec_stream` will use as default the values from original PARSEC version.
 
 ### Examples of usage
 
