@@ -38,7 +38,7 @@ BenSP Suite has several tools, librearies and files in many directories. In orde
 
 BenSP Suite offers input sets to use. You can download the input sets by executing the script `download_input_sets.sh`. (The script will require your contact information and how/here the inputs will be used.) Moreover, the benchmarks support your own custom input sets. If you wish to create another input, consider the related details shown [here](#how-to-create-your-own-custom-input-set-for-dedup-and-ferret).
 
-The `parsec_stream` tool makes easier your use of BenSP to evaluate the characteristics of Stream Processing. If it's your first time using of parametric benchmarks for this Stream Processing Domain, it's recommended that you understand the main parameterizable characteristics available in BenSP benchmarks. Basic information is presented [here] as well as on [GMAP](https://gmap.pucrs.br/gmap/) publications.
+The `parsec_stream` tool makes easier your use of BenSP to evaluate the characteristics of Stream Processing. If it's your first time using of parametric benchmarks for this Stream Processing Domain, it's recommended that you understand the main parameterizable characteristics available in BenSP benchmarks. Basic information is presented [here] as well as on [GMAP](https://gmap.pucrs.br/gmap/home/index/eng) publications.
 
 The main arguments in `parsec_stream` are:
 
